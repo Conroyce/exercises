@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	var compression = function(str) {
+		str = str.split("");
+		var ans = [];
+		var counter = 1;
+		for (var i = 0; i < str.length; i++) {
+		  if (str[i] ===  str[i+1]) {
+		  	counter++; 	
+		  } else {
+		  	ans.push(str[i]+counter);
+		  	counter = 1;
+		    compression(str.join("").substr(counter))
+	 	  }
+		}
+		return ans.join("");
+	};
+	compression("aaaabbcccc");
+</script>	
+</body>
+</html>

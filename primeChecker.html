@@ -1,0 +1,38 @@
+var checkPrime = function(x) {
+  for (var i = 2; i < x; i++) {
+    if(x%i == 0) { return false; }
+     
+  }
+  return true;
+};
+
+
+var primeFactors = function(n) {
+  if (!n || n < 2)
+    return [];
+ 
+  var factors = [];
+  for (var i = 2; i <= n; i++){
+    while (n % i === 0){
+    // console.log([i,n,f]);
+      factors.push(i);
+      n /= i;
+    }
+  }
+  return factors;
+}
+
+function primeGCD(x,y) {
+  var xFactors = primeFactors(x);
+  var xObj = {};
+  var yFactors = primeFactors(y);
+  var yObj = {};
+  var joint = [];
+  for (var i = 0; i < xFactors.length; i++) {
+    if(xObj.xFactors[i]) {
+      xObj.xFactors[i]++;
+    }
+    else {xObj.xFactors[i] = 1;}
+  }
+  return xObj;
+}

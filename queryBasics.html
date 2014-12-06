@@ -1,0 +1,28 @@
+$span = $('<span/>');
+$span.html('OMG') <!--<span>OMG</span>-->
+<!-- .html() does not accept arguements, with .text() you can set the set value inside the specified element. -->
+
+$div = $('<div/>');
+$('body').html($div);
+
+var a = [0,1,2],
+	b = [3,4,5],
+	c = [6,7,8];
+
+$.merge(a,b);
+$.merge(a,c);
+
+var numbers = [23,44,45,1,0,700,9001];
+	arr = $.map(numbers,function(item,index) {
+		if (item%2 == 0) {
+			return item;
+		};
+	}
+});	
+
+greetings = ["hey", "hi", "hello", "yo"];
+greetings = greetings.filter(function(value) {
+	return value.length != 2;
+});
+
+

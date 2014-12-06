@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	var searchPairs = function(array) {
+		var point = array.length;
+		var limit = 1000;
+		var matches = [];
+		while(point > 1) {
+			for (var i = 0; i < point; i++) {
+				if (array[point-1] + array[i] === limit) {
+					matches.push("{" + array[point-1] + ": " + array[i] + "}");
+				} 
+			}
+			point--;
+		}
+		return matches;	
+	};
+	var array = [10, 20, 30, 50, 100, 970, 980, 990];
+	searchPairs(array);
+</script>
+</body>
+</html>

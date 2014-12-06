@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var checkPrime = function(x) {
+  for (var i = 2; i < x; i++) {
+    if(x%i == 0) {
+      return false;
+    }
+  }
+  return true;
+};
+var circ_prime = function(num) {
+  var count = 0;
+  while(count < 4) {
+    if (count === 0) {
+      if (checkPrime(num) === true) {
+        count++;
+      } else {
+        return false;
+      }
+    } else {
+      var arr = num.toString.split("");
+      var newArr = arr.push(arr.shift());
+      var ans = parseInt(newArr.join(""));
+      if (checkPrime(ans) === true) {
+        count++;
+      } else {
+        return false;
+      }
+    }  
+  }
+  return true;
+};
+</script>
+</body>
+</html>

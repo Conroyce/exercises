@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Avengers</title>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="script.js"></script>
+      <style>
+        .jumping-bean {
+          position: fixed; 
+          top: 10px; 
+          right: 10px;
+          font-size: 2em;
+        }
+      </style>
+  </head>
+  <body>
+
+
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <button class='jumping-bean'>how u bean</button>
+    <script>
+      
+      var randomPx = function () {
+          return Math.floor(Math.random() * 100) + 'px';
+        } ; 
+      var randomPxMult = function(multiplier) {
+        return ((Math.floor(Math.random() * 100)*multiplier) + 'px');
+      };
+      var moveButton = function() { 
+        $('this').css("top",randomPx); 
+      };
+      var movingButton = function() {
+        $('.jumping-bean').css("top",randomPx);
+        $('.jumping-bean').css('left',randomPx);
+        setTimeout(movingButton, 1000);
+      };
+      $(document).on('click','.jumping-bean', moveButton);
+      var jumpingButton = function(times) {
+        /*var counter = 0;
+        if (counter > 3) { 
+          $('jumping-bean').css('display','none');
+        } else { */
+          $('.jumping-bean').on('click',function() {
+            $('.jumping-bean').css("top",randomPxMult(times));
+            $('.jumping-bean').css('left',randomPxMult(times));
+            $('.jumping-bean').css('font-size','1em')
+            setTimeout(jumpingButton,(1000/times));
+            counter ++;
+            jumpingButton(times*2);
+            
+        });
+      //}
+    };
+      
+      setTimeout(movingButton,1000);
+      jumpingButton(5);
+      
+      
+    
+    </script>
+  </body>
+</html>

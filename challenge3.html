@@ -1,0 +1,11 @@
+var arr = [1,2,3,4];
+var myFunc = function(x) {
+  console.log(x);
+}
+var forEach = function(array,func) {
+  var len = array.length;
+  for (var i = 0; i < len; i++) {   //we set len = array.length because if we have a function like .pop(), it will affect the array 
+    func(array[i]);                 //and will not operate fully.
+  }
+}; 
+forEach(arr,myFunc);
