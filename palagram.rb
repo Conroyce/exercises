@@ -1,20 +1,19 @@
 def palagram(str)
-  str = str.split('')
-  if (palindrome(str.join('')))
-    return palindrome(str)
-  else   
-    str.length.times do |i|
-      letter = str.push(str.shift)
-      puts letter
-      if (palindrome(str.join('')))
-        return true
-      end  
-    end  
+  return false if str.class != String
+  str = str.downcase.gsub(/[^a-z]/, '')
+  h = Hash.new(0)
+  str.each_char do |letter|
+    h[letter] += 1
+  end
+  puts h
+  odds = 0
+  h.values.each do |num|
+    if(num.odd?)
+      odds += 1
+    end
+    return false if odds > 1 
   end 
-  return false 
+  true 
 end
-
-def palindrome(str)
-  str == str.reverse
-end  
+ 
 
