@@ -15,5 +15,8 @@ def palagram(str)
   end 
   true 
 end
- 
+
+#thoughts: make sure you understand the possible outcomes
+#write out the possible outcomes and brainstorm how to find those outcomes before creating method
+#consider different approaches 
 
