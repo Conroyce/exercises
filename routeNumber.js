@@ -36,6 +36,7 @@ var init = function(area) {
 
   var processNode = function(node, downMoves, rightMoves) {
     //no more paths found, add path
+    console.log(node)
     console.log(downMoves,rightMoves)
     console.log(paths)
     if (!downMoves.length && !rightMoves.length) {
