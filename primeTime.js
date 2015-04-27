@@ -8,6 +8,7 @@ var prime = function(num) {
   // return answer as array
   var ans = [];  
   var isPrime = function(n) {
+    // Now check every whole number from 2 to the square root of n. If any of these divides n exactly, n cannot be prime.
     for (var i = 2; i <= Math.sqrt(n); i++) {
       if (n % i === 0) {
         return false;
